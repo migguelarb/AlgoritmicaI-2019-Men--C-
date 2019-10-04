@@ -7,7 +7,23 @@ void menu(){
 	system("CLS");
     cout<< "\tMENU\n1.Ingreso de datos del trabajador\n2.Calculo de porcentaje\n3.Calculo de pago total\n4.Salir";
 
-}
+}//menu
+
+float validarsueldos(float plata){ 
+
+	while(plata<1000 || plata>2000){
+
+		cout << "ingrese sueldo en el rango asignado   :";
+		cin.ignore();
+		cin.clear();
+		cin >> plata ;
+	}//finsi
+	
+ return plata;
+	
+}//validar sueldo
+
+
 
 int main(){
     float salario=0,  total=0, por1=0, por2=0;
@@ -30,10 +46,13 @@ int main(){
            for (int i=0; i<n ; i++){
                 cout<<"Ingrese el nombre: \n";
                 cin >> nombre;
-                cout << "ingrese el sueldo: \n";
+                cout << "ingrese el sueldo (1000-2000 s/.): \n";
                 cin >> salario;
-
+                validarsueldos(salario);
+                
+               
                 total=total + salario;
+            	
                 cout << endl;
 
                 if(salario<1500){
